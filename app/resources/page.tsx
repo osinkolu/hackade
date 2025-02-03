@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Button } from '@/components/ui/button'
-import { Youtube, BookOpen, FileText, Download, ExternalLink } from 'lucide-react'
+import { Youtube, BookOpen, FileText, Download, ExternalLink, ExternalLinkIcon } from 'lucide-react'
 import Link from 'next/link'
 
 const webinars = [
@@ -72,20 +72,6 @@ const practiceDatasets = [
     records: "50,000+",
     downloadUrl: "#"
   },
-  {
-    title: "Agricultural Yield Data",
-    description: "Historical crop yield data from different regions of Nigeria",
-    size: "1.8GB",
-    records: "35,000+",
-    downloadUrl: "#"
-  },
-  {
-    title: "Financial Transactions",
-    description: "Anonymized financial transaction data for fraud detection",
-    size: "3.2GB",
-    records: "100,000+",
-    downloadUrl: "#"
-  }
 ]
 
 export default function ResourcesPage() {
@@ -106,7 +92,7 @@ export default function ResourcesPage() {
             <TabsList className="grid w-full grid-cols-3">
               <TabsTrigger value="webinars">Webinars</TabsTrigger>
               <TabsTrigger value="learning">Learning Paths</TabsTrigger>
-              <TabsTrigger value="practice">Practice Datasets</TabsTrigger>
+              <TabsTrigger value="practice">Practice</TabsTrigger>
             </TabsList>
 
             {/* Webinars Tab */}
@@ -182,14 +168,10 @@ export default function ResourcesPage() {
                     </CardHeader>
                     <CardContent className="flex flex-col gap-4">
                       <p className="text-muted-foreground">{dataset.description}</p>
-                      <div className="flex items-center gap-4 text-sm">
-                        <span>Size: {dataset.size}</span>
-                        <span>Records: {dataset.records}</span>
-                      </div>
                       <Button variant="outline" asChild>
                         <Link href={dataset.downloadUrl}>
-                          <Download className="mr-2 h-4 w-4" />
-                          Download Dataset
+                          Learn More
+                          <ExternalLinkIcon className="ml-2 h-4 w-4" />
                         </Link>
                       </Button>
                     </CardContent>

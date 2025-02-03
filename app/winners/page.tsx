@@ -57,18 +57,18 @@ const winners = [
 
 const stats = [
   {
-    name: 'Total Prize Money Awarded',
-    value: '₦4M+',
+    name: 'Total Prize Awarded',
+    value: '₦100k',
     icon: Trophy
   },
   {
-    name: 'Winners Hired',
-    value: '25+',
+    name: 'Winners',
+    value: '03',
     icon: Medal
   },
   {
-    name: 'Projects Deployed',
-    value: '40+',
+    name: 'Submissions',
+    value: '50+',
     icon: Award
   }
 ]

@@ -31,10 +31,10 @@ export default function Home() {
   ]
 
   const stats = [
-    { name: 'Active Participants', value: '500+' },
-    { name: 'Hackathons Completed', value: '24' },
-    { name: 'Success Stories', value: '100+' },
-    { name: 'Prize Pool', value: '₦1M+' },
+    { name: 'Active Participants', value: '250+' },
+    { name: 'Hackathons Completed', value: '01' },
+    { name: 'Success Stories', value: '50+' },
+    { name: 'Prize Pool', value: '₦100k+' },
   ]
 
   return (

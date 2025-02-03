@@ -47,7 +47,7 @@ const sponsorshipTiers = [
 
 const currentSponsors = [
   {
-    category: "Technology Partners",
+    category: "Partners",
     companies: [
       {
         name: "TechCorp Nigeria",
@@ -61,37 +61,22 @@ const currentSponsors = [
       }
     ]
   },
-  {
-    category: "Academic Partners",
-    companies: [
-      {
-        name: "Lagos Tech Institute",
-        logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        website: "#"
-      },
-      {
-        name: "Digital Skills Academy",
-        logo: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-        website: "#"
-      }
-    ]
-  }
 ]
 
 const impactStats = [
   {
     name: "Participants Reached",
-    value: "1,000+",
+    value: "100+",
     icon: Users
   },
   {
-    name: "Projects Completed",
-    value: "100+",
+    name: "Solutions Created",
+    value: "50+",
     icon: Target
   },
   {
     name: "Success Rate",
-    value: "85%",
+    value: "95%",
     icon: BarChart
   }
 ]
@@ -175,7 +160,7 @@ export default function SponsorsPage() {
         <div className="mx-auto mt-16 max-w-7xl">
           {currentSponsors.map((category) => (
             <div key={category.category} className="mb-16">
-              <h3 className="mb-8 text-xl font-semibold">{category.category}</h3>
+              <h3 className="mb-8 text-xl font-semibold hidden">{category.category}</h3>
               <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
                 {category.companies.map((company) => (
                   <Link

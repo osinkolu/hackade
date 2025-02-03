@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Code2, Twitter, Linkedin, Mail } from 'lucide-react'
+import { Code2, Twitter, Linkedin, Mail, Globe } from 'lucide-react'
 import { Input } from './ui/input'
 import { Button } from './ui/button'
 import { useState } from 'react'
@@ -18,15 +18,21 @@ const navigation = {
   organizers: [
     {
       name: 'Victor',
-      email: '#',
-      twitter: '#',
-      linkedin: '#',
+      twitter: 'https://twitter.com/olufemivictort',
+      linkedin: 'https://www.linkedin.com/in/olufemi-victor-tolulope',
+      website: 'https://www.olufemivictor.com/',
     },
     {
       name: 'Eniola',
-      email: '#',
-      twitter: '#',
-      linkedin: '#',
+      twitter: 'https://x.com/galileoeni',
+      linkedin: 'https://www.linkedin.com/in/eniola-olaleye-361b39160',
+      website: 'https://galileoeni.github.io/galileo/'
+    },
+    {
+      name: 'Abdrahman',
+      twitter: 'https://x.com/Dev_Rahmlad',
+      linkedin: 'https://www.linkedin.com/in/rahmlad',
+      website: 'https://abdrahman-oladimeji.web.app'
     },
   ],
 }
@@ -95,17 +101,17 @@ export default function Footer() {
             <div key={organizer.name} className="flex flex-col items-center space-y-4">
               <p className="text-sm font-semibold text-primary">{organizer.name}</p>
               <div className="flex space-x-4">
-                <Link href={organizer.twitter} className="text-muted-foreground hover:text-primary">
+                <Link href={organizer.twitter} target='_blank' className="text-muted-foreground hover:text-primary transition duration-200">
                   <span className="sr-only">Twitter</span>
                   <Twitter className="h-5 w-5" />
                 </Link>
-                <Link href={organizer.linkedin} className="text-muted-foreground hover:text-primary">
+                <Link href={organizer.linkedin} target='_blank' className="text-muted-foreground hover:text-primary transition duration-200">
                   <span className="sr-only">LinkedIn</span>
                   <Linkedin className="h-5 w-5" />
                 </Link>
-                <Link href={`mailto:${organizer.email}`} className="text-muted-foreground hover:text-primary">
-                  <span className="sr-only">Email</span>
-                  <Mail className="h-5 w-5" />
+                <Link href={organizer.website} target='_blank' className="text-muted-foreground hover:text-primary transition duration-200">
+                  <span className="sr-only">Website</span>
+                  <Globe className="h-5 w-5" />
                 </Link>
               </div>
             </div>
@@ -113,10 +119,10 @@ export default function Footer() {
         </div>
         <div className='flex flex-col sm:flex-row justify-center md:justify-between gap-4'>
         <p className="mt-10 text-center text-xs leading-5 text-muted-foreground">
-          &copy; 2024 - {new Date().getFullYear()} Hackàde. All rights reserved.
+         Hackàde &copy; 2025 - present. All rights reserved.
         </p>
         <p  className="sm:mt-10 text-center text-xs leading-5 text-muted-foreground">
-          Website developed by <a href="https://wa.me/2349023600083" className='underline underline-offset-2'>Dev. Rahmlad</a></p>
+          Website developed by <a href="https://wa.me/2349023600083" target='_blank' className='underline underline-offset-2'>Dev. Rahmlad</a></p>
         </div>
       </div>
     </footer>

@@ -34,15 +34,15 @@ export default function ContactPage() {
   const faqs = [
     {
       question: "How can I participate in the hackathons?",
-      answer: "You can register for upcoming hackathons through our hackathons page. Make sure to follow us on social media for announcements."
+      answer: "You can register for upcoming hackathons through our hackathons page. Make sure to be on the lookout for our updates via your inbox."
     },
     {
       question: "What are the sponsorship opportunities?",
       answer: "We offer various sponsorship tiers with different benefits. Visit our sponsors page for detailed information or contact us directly."
     },
     {
-      question: "Do I need to be in Lagos to participate?",
-      answer: "No, our hackathons are primarily conducted online, allowing participants from all over Nigeria to join."
+      question: "Do I need to be a Nigerian to participate?",
+      answer: "Yes, you need to be a Nigerian but you don't need to be in Nigeria before you can participate because they are primarily conducted online, allowing Nigerians from anywhere to join."
     }
   ]
   
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     <Mail className="h-6 w-6 text-primary" />
                     <div>
                       <h3 className="font-medium">Email</h3>
-                      <p className="text-sm text-muted-foreground">info@hackade.com.ng</p>
+                      <p className="text-sm text-muted-foreground"><a href="mailto:hackadehacks@gmail.com" className='hover:underline underline-offset-2'>hackadehacks@gmail.com</a></p>
                     </div>
                   </div>
                 </CardContent>
@@ -78,7 +78,7 @@ export default function ContactPage() {
                     <Phone className="h-6 w-6 text-primary" />
                     <div>
                       <h3 className="font-medium">Phone</h3>
-                      <p className="text-sm text-muted-foreground">+234 800 123 4567</p>
+                      <p className="text-sm text-muted-foreground"> <a href="tel:+2348111109159" className='hover:underline underline-offset-2'>+234 811 110 9159</a></p>
                     </div>
                   </div>
                 </CardContent>
@@ -89,7 +89,7 @@ export default function ContactPage() {
                     <MapPin className="h-6 w-6 text-primary" />
                     <div>
                       <h3 className="font-medium">Location</h3>
-                      <p className="text-sm text-muted-foreground">Lagos, Nigeria</p>
+                      <p className="text-sm text-muted-foreground">Nigeria</p>
                     </div>
                   </div>
                 </CardContent>
