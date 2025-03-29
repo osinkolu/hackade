@@ -1,77 +1,90 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { Trophy, Medal, Award, Github, Linkedin } from 'lucide-react'
-import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Trophy,
+  Medal,
+  Award,
+  Github,
+  Linkedin,
+  Twitter,
+  Users,
+  ChevronDown,
+} from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const winners = [
   {
-    name: "Oluwaseun Afolabi",
-    hackathon: "Data Science for Healthcare",
+    name: "DE-MODULATORS",
+    team: ["EDIFON EMMANUEL JIMMY", "Yusuf Agboola Tajudeen"],
     position: "1st Place",
-    date: "April 2024",
-    solution: "AI-Powered Medical Diagnosis Assistant",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80",
-    links: {
-      github: "#",
-      linkedin: "#"
-    }
+    date: "January 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image: [
+      "https://i.ibb.co/v6Y2YHBB/Edifon-Jimmy.jpg",
+      "https://i.ibb.co/R4V99tsJ/Agboola-yusuf.jpg",
+    ],
+    links: [
+      {
+        twitter: "https://x.com/youngboi_eddy?s=09",
+        linkedin:
+          "https://www.linkedin.com/in/edifon-jimmy-b4033b260?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      },
+      {
+        twitter: "https://x.com/agboolayus93855",
+        linkedin: "https://ng.linkedin.com/in/yusuf-tajudeen-b512b227b",
+      },
+    ],
   },
   {
-    name: "Chidinma Okonkwo",
-    hackathon: "AI for Financial Inclusion",
-    position: "1st Place",
-    date: "March 2024",
-    solution: "Micro-lending Risk Assessment Model",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80",
+    name: "Ifeoluwa Adewumi",
+    team: "Ifeadewumi",
+    position: "2nd Place",
+    date: "January 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image: "https://i.ibb.co/wXPQHnv/Ifeoluwa-Adewumi.jpg",
     links: {
-      github: "#",
-      linkedin: "#"
-    }
+      twitter: "https://x.com/TheIfeAdewumi",
+      linkedin: null,
+    },
   },
   {
-    name: "Ibrahim Yusuf",
-    hackathon: "Sustainable Agriculture",
-    position: "1st Place",
-    date: "February 2024",
-    solution: "Crop Yield Optimization System",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80",
+    name: "Oladepo Oluwaferanmi Praise",
+    team: "Oluwaferanmi_O",
+    position: "3rd Place",
+    date: "January 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image:
+      "https://i.ibb.co/Z1gjYt4q/Oluwaferanmi-Oladepo-Oladepo-Oluwaferanmi.jpg",
     links: {
-      github: "#",
-      linkedin: "#"
-    }
+      twitter: null,
+      linkedin: "https://www.linkedin.com/in/oluwaferanmioladepo/",
+    },
   },
-  {
-    name: "Adebola Adeyemi",
-    hackathon: "Smart Cities & IoT",
-    position: "1st Place",
-    date: "January 2024",
-    solution: "Urban Traffic Optimization Platform",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80",
-    links: {
-      github: "#",
-      linkedin: "#"
-    }
-  }
-]
+];
 
 const stats = [
   {
-    name: 'Total Prize Awarded',
-    value: '₦100k',
-    icon: Trophy
+    name: "Total Prize Awarded",
+    value: "₦100k",
+    icon: Trophy,
   },
   {
-    name: 'Winners',
-    value: '03',
-    icon: Medal
+    name: "Winners",
+    value: winners.length.toString().padStart(2, "0"),
+    icon: Medal,
   },
   {
-    name: 'Submissions',
-    value: '50+',
-    icon: Award
-  }
-]
+    name: "Submissions",
+    value: "50+",
+    icon: Award,
+  },
+];
 
 export default function WinnersPage() {
   return (
@@ -79,9 +92,12 @@ export default function WinnersPage() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* Header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Hall of Fame</h1>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Hall of Fame
+          </h1>
           <p className="mt-2 text-lg leading-8 text-muted-foreground">
-            Celebrating the brilliant minds shaping Nigeria&apos;s data science future
+            Celebrating the brilliant minds shaping Nigeria&apos;s data science
+            future
           </p>
         </div>
 
@@ -92,8 +108,12 @@ export default function WinnersPage() {
               <Card key={stat.name} className="pt-6">
                 <CardContent className="text-center">
                   <stat.icon className="mx-auto h-8 w-8 text-primary" />
-                  <dt className="mt-4 text-base leading-7 text-muted-foreground">{stat.name}</dt>
-                  <dd className="mt-2 text-3xl font-bold tracking-tight">{stat.value}</dd>
+                  <dt className="mt-4 text-base leading-7 text-muted-foreground">
+                    {stat.name}
+                  </dt>
+                  <dd className="mt-2 text-3xl font-bold tracking-tight">
+                    {stat.value}
+                  </dd>
                 </CardContent>
               </Card>
             ))}
@@ -102,7 +122,9 @@ export default function WinnersPage() {
 
         {/* Winners Grid */}
         <div className="mx-auto mt-32 max-w-2xl text-center">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Past Winners</h2>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Past Winners
+          </h2>
           <p className="mt-2 text-lg leading-8 text-muted-foreground">
             Meet the talented individuals who&apos;ve excelled in our hackathons
           </p>
@@ -112,37 +134,132 @@ export default function WinnersPage() {
           {winners.map((winner) => (
             <Card key={winner.name} className="flex flex-col overflow-hidden">
               <div className="flex items-center gap-6 p-6">
-                <Image
-                  src={winner.image}
-                  alt={winner.name}
-                  className="h-16 w-16 rounded-full object-cover"
-                  width={1400}
-                  height={2100}
-                />
+                <div className="relative">
+                  {Array.isArray(winner.image) ? (
+                    <div
+                      className={`flex`}
+                    >
+                      <Popover>
+                        <PopoverTrigger className="flex items-center w-16 relative mr-4">
+                            {winner.image.map((img, index) => (
+                            <div
+                              key={index}
+                              className="w-16 flex absolute -top-8"
+                              style={{ zIndex: winner.image.length - index, left: index * 10 }}
+                            >
+                              <Image
+                                src={img}
+                                alt={`${
+                                  winner.name[index] || winner.name
+                                } Avatar`}
+                                className="h-16 w-16 rounded-full object-cover"
+                                width={1400}
+                                height={2100}
+                              />
+                            </div>
+                          ))}
+                          <ChevronDown size={16} className="absolute -right-7 top-1/2 -translate-y-1/2" />
+                        </PopoverTrigger>
+                        <PopoverContent className="flex">
+                          {winner.image.map((img, index) => (
+                            <div
+                              key={index}
+                              className="relative flex"
+                              style={{ zIndex: winner.image.length - index }}
+                            >
+                              <Image
+                                src={img}
+                                alt={`${
+                                  winner.name[index] || winner.name
+                                } Avatar`}
+                                className="h-16 w-16 rounded-full object-cover"
+                                width={1400}
+                                height={2100}
+                              />
+                            </div>
+                          ))}
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  ) : (
+                    <Image
+                      src={winner.image}
+                      alt={winner.name}
+                      className="h-16 w-16 rounded-full object-cover"
+                      width={1400}
+                      height={2100}
+                    />
+                  )}
+                </div>
                 <div>
                   <CardTitle className="text-xl">{winner.name}</CardTitle>
-                  <p className="mt-1 text-sm text-muted-foreground">{winner.hackathon}</p>
+                  {Array.isArray(winner.team) ? (
+                    <Popover>
+                      <PopoverTrigger className="border px-2 py-1 text-muted-foreground text-sm mt-1 flex items-center gap-1 rounded">
+                        Team Members <ChevronDown size={14} />
+                      </PopoverTrigger>
+                      <PopoverContent className="flex flex-col gap-3">
+                        {winner.team.map((name, index) => (
+                          <div className="flex flex-col gap-2" key={index}>
+                            <p className="mt-1 text-sm text-muted-foreground">
+                              {name}
+                            </p>
+                            <div className="flex gap-2">
+                              {Array.isArray(winner.links) &&
+                              winner.links[index].twitter ? (
+                                <Button variant="outline" size="sm" asChild>
+                                  <Link href={winner.links[index].twitter}>
+                                    <Twitter className="mr-2 h-4 w-4" />
+                                    Connect
+                                  </Link>
+                                </Button>
+                              ) : null}
+                              {Array.isArray(winner.links) &&
+                              winner.links[index].linkedin ? (
+                                <Button variant="outline" size="sm" asChild>
+                                  <Link href={winner.links[index].linkedin}>
+                                    <Linkedin className="mr-2 h-4 w-4" />
+                                    Connect
+                                  </Link>
+                                </Button>
+                              ) : null}
+                            </div>
+                          </div>
+                        ))}
+                      </PopoverContent>
+                    </Popover>
+                  ) : (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {winner.team}
+                    </p>
+                  )}
                 </div>
               </div>
               <CardContent className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
                   <Trophy className="h-5 w-5 text-primary" />
-                  <span>{winner.position} - {winner.date}</span>
+                  <span>
+                    {winner.position} - {winner.date}
+                  </span>
                 </div>
                 <p className="text-muted-foreground">{winner.solution}</p>
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={winner.links.github}>
-                      <Github className="mr-2 h-4 w-4" />
-                      View Code
-                    </Link>
-                  </Button>
-                  <Button variant="outline" size="sm" asChild>
-                    <Link href={winner.links.linkedin}>
-                      <Linkedin className="mr-2 h-4 w-4" />
-                      Connect
-                    </Link>
-                  </Button>
+                  {!Array.isArray(winner.links) && winner.links.twitter ? (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={winner.links.twitter}>
+                        <Twitter className="mr-2 h-4 w-4" />
+                        Connect
+                      </Link>
+                    </Button>
+                  ) : null}
+                  {!Array.isArray(winner.links) && winner.links.linkedin ? (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={winner.links.linkedin}>
+                        <Linkedin className="mr-2 h-4 w-4" />
+                        Connect
+                      </Link>
+                    </Button>
+                  ) : null}
                 </div>
               </CardContent>
             </Card>
@@ -151,7 +268,9 @@ export default function WinnersPage() {
 
         {/* CTA */}
         <div className="mx-auto mt-32 max-w-2xl text-center">
-          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Ready to join them?</h2>
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Ready to join them?
+          </h2>
           <p className="mt-2 text-lg leading-8 text-muted-foreground">
             Register for our next hackathon and showcase your skills
           </p>
@@ -163,5 +282,5 @@ export default function WinnersPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }

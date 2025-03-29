@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Hackàde: Nigerian Data Science Hackathon Series',
-  description: 'Monthly hackathons empowering data scientists in Nigeria',
+  description: 'Hackàde hackathon series empowering data scientists in Nigeria',
 };
 
 export default function RootLayout({

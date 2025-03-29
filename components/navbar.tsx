@@ -7,12 +7,13 @@ import { Menu, X, Code2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ModeToggle } from '@/components/mode-toggle'
 import { cn } from '@/lib/utils'
+import { Logo } from './logo'
 
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Hackathons', href: '/hackathons' },
   { name: 'Winners', href: '/winners' },
-  { name: 'Resources', href: '/resources' },
+  // { name: 'Resources', href: '/resources' },
   { name: 'Sponsors', href: '/sponsors' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -27,8 +28,7 @@ export default function Navbar() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <span className="sr-only">Hackàde: Nigerian Data Science Hackathon Series</span>
-            <Code2 className="h-8 w-8" />
-            <span>Hackàde</span>
+            <Logo />
           </Link>
         </div>
         <div className="flex lg:hidden">
@@ -69,8 +69,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
               <span className="sr-only">Hackàde: Nigerian Data Science Hackathon Series</span>
-              <Code2 className="h-8 w-8" />
-              <span>Hackàde</span>
+              <Logo />
             </Link>
             <button
               type="button"

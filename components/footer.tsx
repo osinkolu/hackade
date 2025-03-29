@@ -5,13 +5,14 @@ import { Input } from './ui/input'
 import { Button } from './ui/button'
 import { useState } from 'react'
 import { useToast } from '@/hooks/use-toast'
+import { Logo } from './logo'
 
 const navigation = {
   main: [
     { name: 'Home', href: '/' },
     { name: 'Hackathons', href: '/hackathons' },
     { name: 'Winners', href: '/winners' },
-    { name: 'Resources', href: '/resources' },
+    // { name: 'Resources', href: '/resources' },
     { name: 'Sponsors', href: '/sponsors' },
     { name: 'Contact', href: '/contact' },
   ],
@@ -63,12 +64,11 @@ export default function Footer() {
         <div className="flex justify-center">
           <Link href="/" className="-m-1.5 p-1.5 flex items-center gap-2">
             <span className="sr-only">Hackàde: Nigerian Data Science Hackathon Series</span>
-            <Code2 className="h-8 w-8" />
-            <span>Hackàde</span>
+            <Logo />
           </Link>
         </div>
          {/* Newsletter Subscription */}
-         <div className="mx-auto mt-10 max-w-md text-center">
+         <div className="mx-auto mt-6 max-w-md text-center">
           <h3 className="text-sm font-semibold">Subscribe to our newsletter</h3>
           <p className="mt-2 text-sm text-muted-foreground">
             Stay updated with upcoming hackathons and data science news

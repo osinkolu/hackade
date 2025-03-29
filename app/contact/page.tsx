@@ -7,9 +7,9 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Mail, Phone, MapPin, Send } from 'lucide-react'
 import { useToast } from '@/hooks/use-toast'
+import { Faqs } from '@/components/faqs'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -30,21 +30,6 @@ export default function ContactPage() {
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset()
   }
-
-  const faqs = [
-    {
-      question: "How can I participate in the hackathons?",
-      answer: "You can register for upcoming hackathons through our hackathons page. Make sure to be on the lookout for our updates via your inbox."
-    },
-    {
-      question: "What are the sponsorship opportunities?",
-      answer: "We offer various sponsorship tiers with different benefits. Visit our sponsors page for detailed information or contact us directly."
-    },
-    {
-      question: "Do I need to be a Nigerian to participate?",
-      answer: "Yes, you need to be a Nigerian but you don't need to be in Nigeria before you can participate because they are primarily conducted online, allowing Nigerians from anywhere to join."
-    }
-  ]
   
   return (
     <div className="min-h-screen py-12 sm:py-16 lg:py-20">
@@ -161,21 +146,7 @@ export default function ContactPage() {
         </div>
 
          {/* FAQ Section */}
-         <div className="mx-auto mt-32 max-w-2xl">
-          <h2 className="text-2xl font-bold tracking-tight text-center mb-8">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+         <Faqs />
       </div>
     </div>
   )

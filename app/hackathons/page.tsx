@@ -5,30 +5,25 @@ import { Calendar, Trophy, Users, Clock } from 'lucide-react'
 import Image from 'next/image'
 
 const upcomingHackathon = {
-  title: "Data Science for Healthcare",
-  date: "April 2024",
-  description: "Join us in tackling real-world healthcare challenges using data science and machine learning techniques.",
-  registrationDeadline: "March 25, 2024",
+  title: "From Scores to Seats: The Grad School ML Challenge",
+  date: "April 2025",
+  description: "The objective is to build a model that accurately classifies whether a student will be admitted based on various input features.",
+  registrationDeadline: "April 6, 2025",
   participants: "250+",
-  prizePool: "₦500,000",
-  image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+  prizePool: "₦100,000",
+  image: "https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1564&auto=format&fit=crop&ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  link: "https://docs.google.com/forms/d/e/1FAIpQLSfdbq13N1sX5WUNNGUGfUbXcWXhRpTQAohCU6HUXwFC-u0pew/viewform"
 }
 
-const pastHackathons = [
+export const pastHackathons = [
   {
-    title: "AI for Financial Inclusion",
-    date: "March 2024",
-    description: "Developed innovative solutions to improve financial access across Nigeria using AI.",
-    participants: "200+",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+    title: "Air Quality Prediction from Low-Cost IoT devices",
+    date: "January 2025",
+    description: "The objective is to develop a machine learning model that accurately predicts CO2 levels using data from Chemotronix's low-cost sensors",
+    participants: "110+",
+    image: "https://images.unsplash.com/photo-1683632398898-81d7db605188?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3",
+    link: "https://zindi.africa/competitions/air-quality-prediction-from-low-cost-iot-devices"
   },
-  {
-    title: "Smart Cities & IoT",
-    date: "January 2024",
-    description: "Built solutions for urban challenges using IoT data and advanced analytics.",
-    participants: "220+",
-    image: "https://images.unsplash.com/photo-1494522358652-f30e61a60313?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
-  }
 ]
 
 export default function HackathonsPage() {
@@ -82,7 +77,7 @@ export default function HackathonsPage() {
                 </CardContent>
                 <CardFooter>
                   <Button size="lg" className="w-full" asChild>
-                    <Link href="/hackathons/register">Register Now</Link>
+                    <Link target='_blank' href={upcomingHackathon.link}>Register Now</Link>
                   </Button>
                 </CardFooter>
               </div>
@@ -98,7 +93,7 @@ export default function HackathonsPage() {
           </p>
         </div>
 
-        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           {pastHackathons.map((hackathon) => (
             <Card key={hackathon.title} className="flex flex-col overflow-hidden">
               <div className="relative h-48">
@@ -126,7 +121,7 @@ export default function HackathonsPage() {
               </CardContent>
               <CardFooter>
                 <Button disabled variant="outline" className="w-full" asChild>
-                  <Link href={`/hackathons/${hackathon.title.toLowerCase().replace(/ /g, '-')}`}>
+                  <Link href={hackathon.link} target='_blank'>
                     View Details
                   </Link>
                 </Button>

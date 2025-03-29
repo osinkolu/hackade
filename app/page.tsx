@@ -5,6 +5,8 @@ import { Users, Youtube, Rocket, Calendar } from 'lucide-react'
 import Image from 'next/image'
 import heroLight from '@/assets/images/hero-light.jpg'
 import heroDark from '@/assets/images/hero-dark.jpg'
+import { pastHackathons } from './hackathons/page'
+import { Faqs } from '@/components/faqs'
 
 export default function Home() {
   const features = [
@@ -32,7 +34,7 @@ export default function Home() {
 
   const stats = [
     { name: 'Active Participants', value: '250+' },
-    { name: 'Hackathons Completed', value: '01' },
+    { name: 'Hackathons Completed', value: pastHackathons.length.toString().padStart(2, '0') },
     { name: 'Success Stories', value: '50+' },
     { name: 'Prize Pool', value: '₦100k+' },
   ]
@@ -42,7 +44,7 @@ export default function Home() {
       {/* Hero section */}
       <div className="relative isolate -z-10">
         <div className="overflow-hidden">
-          <div className="mx-auto max-w-7xl px-6 pb-10 xs:pb-32 pt-24 sm:pt-36 lg:px-8">
+          <div className="mx-auto max-w-7xl px-6 pb-10 xs:pb-32 pt-24 lg:px-8">
             <div className="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center">
               <div className="w-full lg:w-1/2 text-center sm:text-left">
                 <h1 className="text-base font-semibold leading-7 text-primary">Welcome to Hackàde</h1>
@@ -117,6 +119,11 @@ export default function Home() {
           ))}
         </dl>
       </div>
+      {/* FAQs Sections */}
+      <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+        <Faqs />
+      </div>
     </div>
+    
   )
 }
