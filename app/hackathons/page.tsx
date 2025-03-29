@@ -15,7 +15,7 @@ const upcomingHackathon = {
   link: "https://docs.google.com/forms/d/e/1FAIpQLSfdbq13N1sX5WUNNGUGfUbXcWXhRpTQAohCU6HUXwFC-u0pew/viewform"
 }
 
-export const pastHackathons = [
+const pastHackathons = [
   {
     title: "Air Quality Prediction from Low-Cost IoT devices",
     date: "January 2025",
@@ -94,8 +94,8 @@ export default function HackathonsPage() {
         </div>
 
         <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-          {pastHackathons.map((hackathon) => (
-            <Card key={hackathon.title} className="flex flex-col overflow-hidden">
+          {pastHackathons.map((hackathon, index) => (
+            <Card key={index} className="flex flex-col overflow-hidden">
               <div className="relative h-48">
                 <Image
                   src={hackathon.image}

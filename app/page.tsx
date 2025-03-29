@@ -5,7 +5,6 @@ import { Users, Youtube, Rocket, Calendar } from 'lucide-react'
 import Image from 'next/image'
 import heroLight from '@/assets/images/hero-light.jpg'
 import heroDark from '@/assets/images/hero-dark.jpg'
-import { pastHackathons } from './hackathons/page'
 import { Faqs } from '@/components/faqs'
 
 export default function Home() {
@@ -34,7 +33,7 @@ export default function Home() {
 
   const stats = [
     { name: 'Active Participants', value: '250+' },
-    { name: 'Hackathons Completed', value: pastHackathons.length.toString().padStart(2, '0') },
+    { name: 'Hackathons Completed', value: '01' },
     { name: 'Success Stories', value: '50+' },
     { name: 'Prize Pool', value: '₦100k+' },
   ]
