@@ -18,6 +18,48 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
+const presentWinners = [
+  {
+    name: "Itopa_",
+    team: "Odeyiany Miriam Itopa",
+    position: "1st Place",
+    date: "April 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image: "https://i.ibb.co/BVHq57gv/Miriam-Itopa.jpg",
+    links: {
+        twitter: "https://x.com/miriamodeyiany?t=qgn_Jl9LcoTmO5ydy99kIA&s=09",
+        linkedin:
+          "https://www.linkedin.com/in/miriam-itopa-odeyiany-919787245",
+      },
+    },
+
+  {
+    name: "Zeee_ML",
+    team: "Zainab Muhammad Tukur",
+    position: "2nd Place",
+    date: "April 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image: "https://i.ibb.co/m5MPMfcj/zainab-muhd-Tukur.jpg",
+    links: {
+      twitter: null,
+      linkedin: "https://www.linkedin.com/in/zainab-muhd-tukur-2b09362a6",
+    },
+  },
+  {
+    name: "Ziggi",
+    team: "Bello Abdulbasit Olayemi",
+    position: "3rd Place",
+    date: "April 2025",
+    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    image:
+      "https://i.ibb.co/yn6XQvnV/Abdulbasit-BELLO.png",
+    links: {
+      twitter: "https://x.com/Ziggiphase001?t=q_4ynZauEMujtgi4uzCMUg&s=09",
+      linkedin: "https://www.linkedin.com/in/abdulbasit-bello-3a883b228/",
+    },
+  },
+];
+
 const winners = [
   {
     name: "DE-MODULATORS",
@@ -120,7 +162,153 @@ export default function WinnersPage() {
           </dl>
         </div>
 
-        {/* Winners Grid */}
+  {/* Present Winners Grid */}
+        <div className="mx-auto mt-32 max-w-2xl text-center">
+          <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
+            Present Winners
+          </h2>
+          <p className="mt-2 text-lg leading-8 text-muted-foreground">
+            Meet the talented individuals who&apos;ve excelled in our hackathons
+          </p>
+        </div>
+
+        <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          {presentWinners.map((presentWinner) => (
+            <Card key={presentWinner.name} className="flex flex-col overflow-hidden">
+              <div className="flex items-center gap-6 p-6">
+                <div className="relative">
+                  {Array.isArray(presentWinner.image) ? (
+                    <div
+                      className={`flex`}
+                    >
+                      <Popover>
+                        <PopoverTrigger className="flex items-center w-16 relative mr-4">
+                            {presentWinner.image.map((img, index) => (
+                            <div
+                              key={index}
+                              className="w-16 flex absolute -top-8"
+                              style={{ zIndex: presentWinner.image.length - index, left: index * 10 }}
+                            >
+                              <Image
+                                src={img}
+                                alt={`${
+                                  presentWinner.name[index] || presentWinner.name
+                                } Avatar`}
+                                className="h-16 w-16 rounded-full object-cover"
+                                width={1400}
+                                height={2100}
+                              />
+                            </div>
+                          ))}
+                          <ChevronDown size={16} className="absolute -right-7 top-1/2 -translate-y-1/2" />
+                        </PopoverTrigger>
+                        <PopoverContent className="flex">
+                          {presentWinner.image.map((img, index) => (
+                            <div
+                              key={index}
+                              className="relative flex"
+                              style={{ zIndex: presentWinner.image.length - index }}
+                            >
+                              <Image
+                                src={img}
+                                alt={`${
+                                  presentWinner.name[index] || presentWinner.name
+                                } Avatar`}
+                                className="h-16 w-16 rounded-full object-cover"
+                                width={1400}
+                                height={2100}
+                              />
+                            </div>
+                          ))}
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                  ) : (
+                    <Image
+                      src={presentWinner.image}
+                      alt={presentWinner.name}
+                      className="h-16 w-16 rounded-full object-cover"
+                      width={1400}
+                      height={2100}
+                    />
+                  )}
+                </div>
+                <div>
+                  <CardTitle className="text-xl">{presentWinner.name}</CardTitle>
+                  {Array.isArray(presentWinner.team) ? (
+                    <Popover>
+                      <PopoverTrigger className="border px-2 py-1 text-muted-foreground text-sm mt-1 flex items-center gap-1 rounded">
+                        Team Members <ChevronDown size={14} />
+                      </PopoverTrigger>
+                      <PopoverContent className="flex flex-col gap-3">
+                        {presentWinner.team.map((name, index) => (
+                          <div className="flex flex-col gap-2" key={index}>
+                            <p className="mt-1 text-sm text-muted-foreground">
+                              {name}
+                            </p>
+                            <div className="flex gap-2">
+                              {Array.isArray(presentWinner.links) &&
+                              presentWinner.links[index].twitter ? (
+                                <Button variant="outline" size="sm" asChild>
+                                  <Link href={presentWinner.links[index].twitter}>
+                                    <Twitter className="mr-2 h-4 w-4" />
+                                    Connect
+                                  </Link>
+                                </Button>
+                              ) : null}
+                              {Array.isArray(presentWinner.links) &&
+                              presentWinner.links[index].linkedin ? (
+                                <Button variant="outline" size="sm" asChild>
+                                  <Link href={presentWinner.links[index].linkedin}>
+                                    <Linkedin className="mr-2 h-4 w-4" />
+                                    Connect
+                                  </Link>
+                                </Button>
+                              ) : null}
+                            </div>
+                          </div>
+                        ))}
+                      </PopoverContent>
+                    </Popover>
+                  ) : (
+                    <p className="mt-1 text-sm text-muted-foreground">
+                      {presentWinner.team}
+                    </p>
+                  )}
+                </div>
+              </div>
+              <CardContent className="flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  <Trophy className="h-5 w-5 text-primary" />
+                  <span>
+                    {presentWinner.position} - {presentWinner.date}
+                  </span>
+                </div>
+                <p className="text-muted-foreground">{presentWinner.solution}</p>
+                <div className="flex gap-4">
+                  {!Array.isArray(presentWinner.links) && presentWinner.links.twitter ? (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={presentWinner.links.twitter}>
+                        <Twitter className="mr-2 h-4 w-4" />
+                        Connect
+                      </Link>
+                    </Button>
+                  ) : null}
+                  {!Array.isArray(presentWinner.links) && presentWinner.links.linkedin ? (
+                    <Button variant="outline" size="sm" asChild>
+                      <Link href={presentWinner.links.linkedin}>
+                        <Linkedin className="mr-2 h-4 w-4" />
+                        Connect
+                      </Link>
+                    </Button>
+                  ) : null}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+
+        {/* Past Winners Grid */}
         <div className="mx-auto mt-32 max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
             Past Winners
