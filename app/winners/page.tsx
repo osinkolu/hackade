@@ -118,7 +118,7 @@ const stats = [
   },
   {
     name: "Winners",
-    value: winners.length.toString().padStart(2, "0"),
+    value: (presentWinners.length + winners.length).toString().padStart(2, "0"),
     icon: Medal,
   },
   {
@@ -165,7 +165,7 @@ export default function WinnersPage() {
   {/* Present Winners Grid */}
         <div className="mx-auto mt-32 max-w-2xl text-center">
           <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
-            Present Winners
+            Recent Winners
           </h2>
           <p className="mt-2 text-lg leading-8 text-muted-foreground">
             Meet the talented individuals who&apos;ve excelled in our hackathons
