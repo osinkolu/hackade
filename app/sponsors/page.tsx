@@ -52,7 +52,7 @@ const currentSponsors = [
       {
         name: "Hawk Gaming Group",
         logo: "/attached_assets/hawkgg logo_1753360366481.png",
-        website: "#",
+        website: "https://hawk.gg/",
         description: "Hawk Gaming Group stands as a leader in gaming and esports, delivering transformative initiatives and innovative solutions for public and private sectors. Leveraging extensive international partnerships, we drive global knowledge exchange and redefine the boundaries of gaming and esports excellence."
       }
     ]
