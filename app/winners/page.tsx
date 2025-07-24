@@ -24,7 +24,7 @@ const presentWinners = [
     team: "Odeyiany Miriam Itopa",
     position: "1st Place",
     date: "April 2025",
-    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    solution: "From Scores to Seats: The Grad School ML Challenge",
     image: "https://i.ibb.co/BVHq57gv/Miriam-Itopa.jpg",
     links: {
         twitter: "https://x.com/miriamodeyiany?t=qgn_Jl9LcoTmO5ydy99kIA&s=09",
@@ -38,7 +38,7 @@ const presentWinners = [
     team: "Zainab Muhammad Tukur",
     position: "2nd Place",
     date: "April 2025",
-    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    solution: "From Scores to Seats: The Grad School ML Challenge",
     image: "https://i.ibb.co/m5MPMfcj/zainab-muhd-Tukur.jpg",
     links: {
       twitter: null,
@@ -50,7 +50,7 @@ const presentWinners = [
     team: "Bello Abdulbasit Olayemi",
     position: "3rd Place",
     date: "April 2025",
-    solution: "Air Quality Prediction from Low-Cost IoT devices",
+    solution: "From Scores to Seats: The Grad School ML Challenge",
     image:
       "https://i.ibb.co/yn6XQvnV/Abdulbasit-BELLO.png",
     links: {
