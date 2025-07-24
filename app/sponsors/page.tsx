@@ -47,20 +47,27 @@ const sponsorshipTiers = [
 
 const currentSponsors = [
   {
-    category: "Partners",
+    category: "Diamond Sponsors",
     companies: [
       {
-        name: "TechCorp Nigeria",
-        logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80",
-        website: "#"
-      },
-      {
-        name: "DataTech Solutions",
-        logo: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80",
-        website: "#"
+        name: "Hawk Gaming Group",
+        logo: "/attached_assets/hawkgg logo_1753360366481.png",
+        website: "#",
+        description: "Hawk Gaming Group stands as a leader in gaming and esports, delivering transformative initiatives and innovative solutions for public and private sectors. Leveraging extensive international partnerships, we drive global knowledge exchange and redefine the boundaries of gaming and esports excellence."
       }
     ]
   },
+  {
+    category: "Silver Sponsors",
+    companies: [
+      {
+        name: "LyngualLabs",
+        logo: "/attached_assets/lynguallabsb_1753360576349.png",
+        website: "https://lynguallabs.org",
+        description: "LyngualLabs is an AI research-focused lab under the lynguaTech Innovative Foundation. Our mission is to push the boundaries of speech technology, natural language processing (NLP), and artificial intelligence (AI) to create inclusive and culturally relevant solutions for multilingual and multicultural communities."
+      }
+    ]
+  }
 ]
 
 const impactStats = [
@@ -160,28 +167,41 @@ export default function SponsorsPage() {
         <div className="mx-auto mt-16 max-w-7xl">
           {currentSponsors.map((category) => (
             <div key={category.category} className="mb-16">
-              <h3 className="mb-8 text-xl font-semibold hidden">{category.category}</h3>
-              <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+              <h3 className="mb-8 text-xl font-semibold text-center">{category.category}</h3>
+              <div className="grid grid-cols-1 gap-8 lg:grid-cols-1">
                 {category.companies.map((company) => (
-                  <Link
+                  <div
                     key={company.name}
-                    href={company.website}
-                    className="group relative flex items-center gap-6 rounded-lg border p-6 transition-colors hover:bg-muted"
+                    className="group relative rounded-lg border p-8 transition-colors hover:bg-muted"
                   >
-                    <div className="relative h-16 w-16 overflow-hidden rounded">
-                      <img
-                        src={company.logo}
-                        alt={company.name}
-                        className="h-full w-full object-cover"
-                      />
+                    <div className="flex flex-col md:flex-row items-center gap-8">
+                      <div className="relative h-24 w-24 md:h-32 md:w-32 overflow-hidden rounded-lg flex-shrink-0">
+                        <img
+                          src={company.logo}
+                          alt={company.name}
+                          className="h-full w-full object-contain"
+                        />
+                      </div>
+                      <div className="flex-grow text-center md:text-left">
+                        <h4 className="text-xl font-semibold mb-2">{company.name}</h4>
+                        <p className="text-muted-foreground mb-4">
+                          {company.description}
+                        </p>
+                        {company.website !== "#" && (
+                          <Link
+                            href={company.website}
+                            target="_blank"
+                            className="inline-flex items-center gap-2 text-primary hover:underline"
+                          >
+                            Visit Website
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </Link>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="font-medium">{company.name}</h4>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        View partner details
-                      </p>
-                    </div>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
