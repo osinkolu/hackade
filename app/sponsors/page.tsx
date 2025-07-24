@@ -66,17 +66,17 @@ const currentSponsors = [
 const impactStats = [
   {
     name: "Participants Reached",
-    value: "100+",
+    value: "250+",
     icon: Users
   },
   {
-    name: "Solutions Created",
-    value: "50+",
+    name: "Hackathons Completed",
+    value: "02",
     icon: Target
   },
   {
-    name: "Success Rate",
-    value: "95%",
+    name: "Total Prize Awarded",
+    value: "₦225k",
     icon: BarChart
   }
 ]
