@@ -33,9 +33,9 @@ export default function Home() {
 
   const stats = [
     { name: 'Active Participants', value: '250+' },
-    { name: 'Hackathons Completed', value: '01' },
+    { name: 'Hackathons Completed', value: '02' },
     { name: 'Success Stories', value: '50+' },
-    { name: 'Prize Pool', value: '₦100k+' },
+    { name: 'Prize Pool', value: '₦225k+' },
   ]
 
   return (

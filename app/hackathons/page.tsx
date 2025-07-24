@@ -5,17 +5,25 @@ import { Calendar, Trophy, Users, Clock } from 'lucide-react'
 import Image from 'next/image'
 
 const upcomingHackathon = {
-  title: "From Scores to Seats: The Grad School ML Challenge",
-  date: "April 2025",
-  description: "The objective is to build a model that accurately classifies whether a student will be admitted based on various input features.",
-  registrationDeadline: "April 6, 2025",
-  participants: "250+",
-  prizePool: "₦100,000",
-  image: "https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1564&auto=format&fit=crop&ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+  title: "Abstract Reasoning Challenge",
+  date: "August 2025",
+  description: "Develop a machine learning model that can generalize from a small number of examples to solve abstract reasoning tasks and demonstrate fluid intelligence.",
+  registrationDeadline: "July 31, 2025",
+  participants: "TBD",
+  prizePool: "₦3,000,000",
+  image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3",
   link: "https://docs.google.com/forms/d/e/1FAIpQLSfdbq13N1sX5WUNNGUGfUbXcWXhRpTQAohCU6HUXwFC-u0pew/viewform"
 }
 
 const pastHackathons = [
+  {
+    title: "From Scores to Seats: The Grad School ML Challenge",
+    date: "April 2025",
+    description: "The objective is to build a model that accurately classifies whether a student will be admitted based on various input features.",
+    participants: "250+",
+    image: "https://images.unsplash.com/photo-1607013407627-6ee814329547?q=80&w=1564&auto=format&fit=crop&ixlib=rb-4.0.3",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSfdbq13N1sX5WUNNGUGfUbXcWXhRpTQAohCU6HUXwFC-u0pew/viewform"
+  },
   {
     title: "Air Quality Prediction from Low-Cost IoT devices",
     date: "January 2025",
